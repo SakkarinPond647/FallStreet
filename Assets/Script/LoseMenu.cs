@@ -7,6 +7,8 @@ using UnityEngine.Advertisements;
 
 public class LoseMenu : MonoBehaviour
 {
+    string placementId = "video";
+
     void Start()
     {
         
@@ -15,6 +17,8 @@ public class LoseMenu : MonoBehaviour
 
     public void RestartScene()
     {
+        Data.score = 0;
+        Data.round = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -22,4 +26,5 @@ public class LoseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
 }

@@ -17,7 +17,7 @@ public class ScorePerSecond : MonoBehaviour
     void Start()
     {
         highscore = PlayerPrefs.GetFloat("highscore", 0);
-        scoreAmount = 0f;
+        scoreAmount = Data.score;
         pointIncreasedPerSec = 1f;
         //highScoreText.text = "High score record : " + highscore.ToString();
     }

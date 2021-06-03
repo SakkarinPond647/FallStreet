@@ -13,10 +13,11 @@ public class Player : MonoBehaviour
     Vector3 desiredPosition;
 
     public GameObject loseMenuUI;
+    public GameObject rewardedMenuUI;
 
     public ScorePerSecond score;
 
-    string placementId = "video";
+    //string placementId = "video";
 
     // Start is called before the first frame update
     void Start()
@@ -77,9 +78,17 @@ public class Player : MonoBehaviour
         if (collision.tag == "Spike")
         {
             //Debug.Log("dead Player");
-            ShowAds();
-            loseMenuUI.SetActive(true);
-            Time.timeScale = 0;
+            //ShowAds();
+            if(Data.round == 1)
+            {
+                loseMenuUI.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                rewardedMenuUI.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
 
         if (collision.tag == "Coin")
@@ -89,11 +98,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    void ShowAds()
-    {
-        if (Advertisement.IsReady(placementId))
-        {
-            Advertisement.Show(placementId);
-        }
-    }
+    //void ShowAds()
+    //{
+    //    if (Advertisement.IsReady(placementId))
+    //    {
+    //        Advertisement.Show(placementId);
+    //    }
+    //}
 }
