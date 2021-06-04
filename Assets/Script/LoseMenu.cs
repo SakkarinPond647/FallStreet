@@ -18,7 +18,7 @@ public class LoseMenu : MonoBehaviour
     public void RestartScene()
     {
         Data.score = 0;
-        Data.round = 0;
+        Data.isRespawn = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

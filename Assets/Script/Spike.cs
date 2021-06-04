@@ -7,12 +7,6 @@ public class Spike : MonoBehaviour
     public Vector2 minMaxYValue;
     Vector2 pos;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {   //Vector3.Up = new Vector3(0,1,0)
@@ -31,7 +25,6 @@ public class Spike : MonoBehaviour
     {
         if (Random.value > 0.5f)
         {
-            //Debug.Log("Disabling");
             transform.GetChild(0).gameObject.SetActive(false);
             return;
         }

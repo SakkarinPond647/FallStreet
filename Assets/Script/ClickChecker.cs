@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class ClickChecker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.gameIsPause == false && Time.timeScale == 1)
+        if (PauseMenu.gameIsPause == false)
         {
             if (Input.GetMouseButtonDown(0))
             {

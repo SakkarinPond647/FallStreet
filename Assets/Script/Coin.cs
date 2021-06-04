@@ -12,12 +12,6 @@ public class Coin : MonoBehaviour
 
     public AudioClip coinSound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -33,25 +27,12 @@ public class Coin : MonoBehaviour
         }
     }
 
-    void ShowOrHide()
-    {
-        if (Random.value > 0.5f)
-        {
-            //Debug.Log("Disabling");
-            transform.gameObject.SetActive(false);
-            return;
-        }
-
-        transform.gameObject.SetActive(true);
-
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             StartCoroutine(HideObject());
-            Debug.Log("Destoy Coin");
+            Debug.Log("Destroy Coin");
             AudioSource.PlayClipAtPoint(coinSound, transform.position);
             spriteRenderer.enabled = false;
             circleCollider.enabled = false;

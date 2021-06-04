@@ -12,17 +12,11 @@ public class DelayedStartScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("StartDelay");
+        StartCoroutine(nameof(StartDelay));
         image.enabled = false;
         button.enabled = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     IEnumerator StartDelay()
     {
         Time.timeScale = 0;

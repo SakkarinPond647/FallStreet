@@ -6,5 +6,5 @@ public static class Data
 {
     public static float score = 0f;
 
-    public static int round = 0;
+    public static bool isRespawn = false;
 }

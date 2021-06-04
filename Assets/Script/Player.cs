@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         DesiredPosition();
-        changeDirection();
+        ChangeDirection();
         animator = GetComponent<Animator>();
     }
 
@@ -54,13 +54,13 @@ public class Player : MonoBehaviour
     public void CallThisMethod()
     {
         DesiredPosition();
-        changeDirection();
+        ChangeDirection();
     }
     public void DesiredPosition()
     {
         desiredPosition = new Vector2(changeDirecionBool ? xValue.x : xValue.y, transform.position.y);
     }
-    void changeDirection()
+    void ChangeDirection()
     {
         changeDirecionBool = !changeDirecionBool;
         // transform.position = Vector3.Lerp(transform.position,desiredPosition,.1f);
@@ -75,11 +75,11 @@ public class Player : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Spike")
+        if (collision.CompareTag("Spike"))
         {
             //Debug.Log("dead Player");
             //ShowAds();
-            if(Data.round == 1)
+            if(Data.isRespawn)
             {
                 loseMenuUI.SetActive(true);
                 Time.timeScale = 0;
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (collision.tag == "Coin")
+        if (collision.CompareTag("Coin"))
         {
             Debug.Log("Get coin");
             score.scoreAmount += 10;

@@ -50,23 +50,19 @@ public class RewardVideo : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidFinish(string surfacingId, ShowResult showResult)
     {
-        // Define conditional logic for each ad completion status:
-        if (showResult == ShowResult.Finished)
+        switch (showResult)
         {
-            // Reward the user for watching the ad to completion.
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Data.score = score.scoreAmount;
-            Data.round = 1;
-            Debug.Log("เล่นเสร็จเเล้ว");
-        }
-        else if (showResult == ShowResult.Skipped)
-        {
-            // Do not reward the user for skipping the ad.
-            Debug.Log("กด SKIP");
-        }
-        else if (showResult == ShowResult.Failed)
-        {
-            Debug.LogWarning("The ad did not finish due to an error.");
+            // Define conditional logic for each ad completion status:
+            case ShowResult.Finished:
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Data.score = score.scoreAmount;
+                Data.isRespawn = true;
+                break;
+            case ShowResult.Skipped:
+                break;
+            case ShowResult.Failed:
+                Debug.LogWarning("The ad did not finish due to an error.");
+                break;
         }
     }
 
