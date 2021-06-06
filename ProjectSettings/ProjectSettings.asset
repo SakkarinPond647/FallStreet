@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: DNADev
   productName: FallStreet
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -146,7 +146,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.FallStreet
+    Android: com.DNADev.FallStreet
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -238,8 +238,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: DNADev.keystore'
-  AndroidKeyaliasName: make it falls
+  AndroidKeystoreName: '{inproject}: build.keystore'
+  AndroidKeyaliasName: mif
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
